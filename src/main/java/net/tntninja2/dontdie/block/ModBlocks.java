@@ -15,7 +15,7 @@ import net.tntninja2.dontdie.item.ModItemGroup;
 
 public class ModBlocks {
 
-    public static final MythrilBlock MYTHRIL_BLOCK = (MythrilBlock) registerBlock("mythril_block",
+    public static final Block MYTHRIL_BLOCK = registerBlock("mythril_block",
             new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(5).sounds(BlockSoundGroup.METAL)), ModItemGroup.ItemGroupExample);
 //    To make a new block, copy the lines above, lines in en_us, and .json files in blockstates, models/block,
 //    models/item, and textures/block folders
