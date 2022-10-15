@@ -27,6 +27,8 @@ public class ModBlocks {
 
 //    hi
 
+//    hello
+
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup) {
         registerBlockItem(name, block, itemGroup);
         return Registry.register(Registry.BLOCK, new Identifier(DontDie.MOD_ID, name), block);
