@@ -1,5 +1,4 @@
 package net.tntninja2.dontdie.block;
-//Test
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -24,10 +23,6 @@ public class ModBlocks {
 
     public static final Block MYTHRIL_ORE = registerBlock("mythril_ore",
             new Block(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3).sounds(BlockSoundGroup.STONE)), ModItemGroup.ItemGroupExample);
-
-//    hi
-
-//    hello
 
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup) {
         registerBlockItem(name, block, itemGroup);
