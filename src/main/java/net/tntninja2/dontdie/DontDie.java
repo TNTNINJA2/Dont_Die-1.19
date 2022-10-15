@@ -1,6 +1,7 @@
 package net.tntninja2.dontdie;
 
 import net.fabricmc.api.ModInitializer;
+import net.tntninja2.dontdie.block.ModBlocks;
 import net.tntninja2.dontdie.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ public class DontDie implements ModInitializer {
 	public void onInitialize() {
 //		This happens when minecraft starts
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 
 	}
 }

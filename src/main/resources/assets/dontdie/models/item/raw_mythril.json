@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mtmod:item/test_boots"
+    "layer0": "dontdie:item/raw_mythril"
   }
+
 }

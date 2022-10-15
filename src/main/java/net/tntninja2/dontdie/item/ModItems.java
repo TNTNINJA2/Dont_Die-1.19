@@ -11,19 +11,21 @@ import net.tntninja2.dontdie.item.custom.MythrilIngotItem;
 
 public class ModItems {
     public static final Item MYTHRIL_INGOT = registerItem("mythril_ingot",
-            new MythrilIngotItem(new FabricItemSettings().group(ItemGroup.MISC)));
-//    add more items by copying ^^ , lines in en_us, models/item/mythril_ingot.json, mythril_ingot.png
+            new Item(new FabricItemSettings().group(ModItemGroup.ItemGroupExample)));
+//    Add more items by copying ^^ , lines in en_us, models/item/mythril_ingot_from_smelting_mythril_ore.json, mythril_ingot.png
 //    and replace all instances of mythril_ingot with new item name
+//      Also anything with mythril in the name is meant as an example and is not going to be a part of the final mod
+
+    public static final Item RAW_MYTHRIL = registerItem("raw_mythril",
+            new Item(new FabricItemSettings().group(ModItemGroup.ItemGroupExample)));
 
 
-//    public static final Item MYTHRIL_GOLEM_SPAWN_EGG = registerItem("mythril_golem_spawn_egg",
-//            new SpawnEggItem(ModEntities.MYTHRIL_GOLEM, 999999, 000000,
-//                    new FabricItemSettings().group(ItemGroup.MISC)));
 
 
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(DontDie.MOD_ID, name), item);
+
     }
 
     public static void registerModItems() {

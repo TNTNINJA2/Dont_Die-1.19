@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "dontdie:mythril_ore"
+  },
+  "result": "dontdie:mythril_ingot"
+}
