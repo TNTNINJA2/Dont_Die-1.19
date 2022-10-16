@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "dontdie:block/eggplant/eggplant_stage2"
+  }
+}

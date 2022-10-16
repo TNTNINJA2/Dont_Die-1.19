@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "age=0": { "model":  "dontdie:block/eggplant/eggplant_stage0"},
+    "age=1": { "model":  "dontdie:block/eggplant/eggplant_stage1"},
+    "age=2": { "model":  "dontdie:block/eggplant/eggplant_stage2"},
+    "age=3": { "model":  "dontdie:block/eggplant/eggplant_stage3"},
+    "age=4": { "model":  "dontdie:block/eggplant/eggplant_stage4"},
+    "age=5": { "model":  "dontdie:block/eggplant/eggplant_stage5"},
+    "age=6": { "model":  "dontdie:block/eggplant/eggplant_stage6"}
+  }
+}

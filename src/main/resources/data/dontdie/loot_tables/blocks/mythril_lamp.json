@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "dontdie:mythril_block"
+          "name": "dontdie:mythril_lamp"
         }
       ],
       "rolls": 1.0

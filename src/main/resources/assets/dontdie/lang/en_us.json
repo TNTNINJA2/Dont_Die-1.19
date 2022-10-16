@@ -1,9 +1,17 @@
 {
   "item.dontdie.mythril_ingot": "Mythril Ingot",
   "item.dontdie.raw_mythril": "Raw Mythril",
+  "item.dontdie.eggplant": "Eggplant",
+  "item.dontdie.eggplant_seeds": "Eggplant Seeds",
 
   "block.dontdie.mythril_block": "Mythril Block",
   "block.dontdie.mythril_ore": "Mythril Ore",
+  "block.dontdie.mythril_lamp": "Mythril Lamp",
+  "block.dontdie.eggplant_crop": "Eggplant Crop",
+
+
+
+
 
 
   "itemGroup.dontdie.item_group_example": "Example Item Group"

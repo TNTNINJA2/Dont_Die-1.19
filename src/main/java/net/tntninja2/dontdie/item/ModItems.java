@@ -1,13 +1,16 @@
 package net.tntninja2.dontdie.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.AliasedBlockItem;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.tntninja2.dontdie.DontDie;
-import net.tntninja2.dontdie.item.custom.MythrilIngotItem;
+import net.tntninja2.dontdie.block.ModBlocks;
 
 public class ModItems {
     public static final Item MYTHRIL_INGOT = registerItem("mythril_ingot",
@@ -19,7 +22,15 @@ public class ModItems {
     public static final Item RAW_MYTHRIL = registerItem("raw_mythril",
             new Item(new FabricItemSettings().group(ModItemGroup.ItemGroupExample)));
 
+    public static final Item EGGPLANT_SEEDS = registerItem("eggplant_seeds",
+            new AliasedBlockItem(ModBlocks.EGGPLANT_CROP,
+                    new FabricItemSettings().group(ModItemGroup.ItemGroupExample)));
 
+    public static final Item EGGPLANT = registerItem("eggplant",
+            new Item(new FabricItemSettings().group(ModItemGroup.ItemGroupExample)
+                    .food(new FoodComponent.Builder().hunger(4).saturationModifier(4f)
+                            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 200)
+                                    , 1).build())));
 
 
 

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=true": { "model":  "dontdie:block/mythril_lamp_on"},
+    "lit=false": { "model":  "dontdie:block/mythril_lamp_off"}
+  }
+}
