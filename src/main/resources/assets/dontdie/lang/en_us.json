@@ -3,7 +3,8 @@
   "item.dontdie.raw_mythril": "Raw Mythril",
   "item.dontdie.eggplant": "Eggplant",
   "item.dontdie.eggplant_seeds": "Eggplant Seeds",
-  "item.dontie.blast_shielding": "Blast Shielding",
+
+  "block.dontdie.blast_shielding": "Blast Shielding",
   "block.dontdie.mythril_block": "Mythril Block",
   "block.dontdie.mythril_ore": "Mythril Ore",
   "block.dontdie.mythril_lamp": "Mythril Lamp",
