@@ -32,6 +32,9 @@ public class ModBlocks {
     public static final Block EGGPLANT_CROP = registerBlockWithoutItem("eggplant_crop",
             new EggplantCropBlock(FabricBlockSettings.copy(Blocks.WHEAT)));
 
+    public static final Block BLAST_SHIELDING = registerBlock("blast_shielding",
+            new Block(FabricBlockSettings.of(Material.METAL).requiresTool().strength(6,12).sounds(BlockSoundGroup.METAL)), ModItemGroup.ItemGroupExample);
+
 
     private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(DontDie.MOD_ID, name), block);
