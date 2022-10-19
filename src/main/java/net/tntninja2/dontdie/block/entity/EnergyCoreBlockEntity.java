@@ -26,7 +26,7 @@ public class EnergyCoreBlockEntity extends BlockEntity implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.getController().getCurrentAnimation() != null) {
+        if (event.getController().getCurrentAnimation() == null) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
         }
 
