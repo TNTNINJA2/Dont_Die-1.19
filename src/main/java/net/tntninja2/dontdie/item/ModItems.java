@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.tntninja2.dontdie.DontDie;
 import net.tntninja2.dontdie.block.ModBlocks;
+import net.tntninja2.dontdie.item.custom.EnergyCoreItem;
 
 public class ModItems {
     public static final Item MYTHRIL_INGOT = registerItem("mythril_ingot",
@@ -29,8 +30,12 @@ public class ModItems {
     public static final Item EGGPLANT = registerItem("eggplant",
             new Item(new FabricItemSettings().group(ModItemGroup.ItemGroupExample)
                     .food(new FoodComponent.Builder().hunger(4).saturationModifier(4f)
-                            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 200)
-                                    , 1).build())));
+                            .statusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 200),
+                                    1).build())));
+
+    public static final Item ENERGY_CORE_ITEM = registerItem("energy_core",
+            new EnergyCoreItem(ModBlocks.ENERGY_CORE,
+                    new FabricItemSettings().group(ModItemGroup.ItemGroupExample)));
 
 
 

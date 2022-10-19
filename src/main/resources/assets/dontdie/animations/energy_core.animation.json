@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"core": {
+					"rotation": {
+						"vector": ["math.sin(time* 36 - 72) * 360", "math.sin(time* 72) * 360", "math.sin(-time* 36 + 36) * 360"]
+					},
+					"position": {
+						"vector": [
+							"math.sin(time * 180) * math.sin(time * math.pi * 20 - 70) / 2",
+							"math.sin(time * 360) * math.sin(time * math.pi * 10)",
+							"math.sin(time * 200 + 67) * math.sin(time * math.pi * 15) / 2"
+						]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}
