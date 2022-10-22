@@ -14,6 +14,7 @@ public class MythrilIngotItem extends Item {
     }
 
     public ActionResult useOnBlock(ItemUsageContext context) {
+
         Vec3d hitPos = context.getHitPos();
         Vec3d playerPos = context.getPlayer().getPos();
         Vec3d differenceVector = hitPos.subtract(playerPos);

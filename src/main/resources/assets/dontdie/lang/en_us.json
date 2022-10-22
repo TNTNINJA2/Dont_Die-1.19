@@ -3,6 +3,15 @@
   "item.dontdie.raw_mythril": "Raw Mythril",
   "item.dontdie.eggplant": "Eggplant",
   "item.dontdie.eggplant_seeds": "Eggplant Seeds",
+  "item.dontdie.large_celeritas_crystal": "Large Celeritas Crystal",
+  "item.dontdie.large_sanitas_crystal": "Large Sanitas Crystal",
+  "item.dontdie.large_fulvas_crystal": "Large Fulvas Crystal",
+  "item.dontdie.large_lividus_crystal": "Large Lividus Crystal",
+  "item.dontdie.large_prasinus_crystal": "Large Prasinus Crystal",
+  "item.dontdie.large_purpureas_crystal": "Large Purpureas Crystal",
+  "item.dontdie.large_ruber_crystal": "Large Ruber Crystal",
+  "item.dontdie.large_viribus_crystal": "Large Viribus Crystal",
+  "item.dontdie.medium_ruber_crystal": "Medium Ruber Crystal",
 
   "block.dontdie.blast_shielding": "Blast Shielding",
   "block.dontdie.mythril_block": "Mythril Block",
@@ -16,7 +25,9 @@
 
 
 
-  "itemGroup.dontdie.item_group_example": "Example Item Group"
+
+  "itemGroup.dontdie.item_group_example": "Example Item Group",
+  "itemGroup.dontdie.crystal_item_group": "Crystals"
 
 
 }

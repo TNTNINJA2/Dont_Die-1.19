@@ -23,6 +23,7 @@ public class MythrilLampBlock extends Block {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
+
         if(!world.isClient() && hand == Hand.MAIN_HAND) {
             world.setBlockState(pos, state.cycle(LIT));
         }
