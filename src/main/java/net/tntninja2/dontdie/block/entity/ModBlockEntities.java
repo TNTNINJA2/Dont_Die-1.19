@@ -8,6 +8,7 @@ import net.tntninja2.dontdie.DontDie;
 import net.tntninja2.dontdie.block.ModBlocks;
 
 public class ModBlockEntities {
+    public static BlockEntityType<MythrilFurnaceBlockEntity> MYTHRIL_FURNACE;
     public static BlockEntityType<EnergyCoreBlockEntity> ENERGY_CORE;
 
     public static void registerAllBlockEntities() {
@@ -15,5 +16,10 @@ public class ModBlockEntities {
                 new Identifier(DontDie.MOD_ID, "energy_core"),
                 FabricBlockEntityTypeBuilder.create(EnergyCoreBlockEntity::new,
                         ModBlocks.ENERGY_CORE).build(null));
+
+        MYTHRIL_FURNACE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(DontDie.MOD_ID, "mythril_block"),
+                FabricBlockEntityTypeBuilder.create(MythrilFurnaceBlockEntity::new,
+                        ModBlocks.MYTHRIL_FURNACE).build(null));
     }
 }

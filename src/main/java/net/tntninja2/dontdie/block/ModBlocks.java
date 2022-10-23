@@ -13,6 +13,7 @@ import net.minecraft.util.registry.Registry;
 import net.tntninja2.dontdie.DontDie;
 import net.tntninja2.dontdie.block.custom.EggplantCropBlock;
 import net.tntninja2.dontdie.block.custom.EnergyCoreBlock;
+import net.tntninja2.dontdie.block.custom.MythrilFurnaceBlock;
 import net.tntninja2.dontdie.block.custom.MythrilLampBlock;
 import net.tntninja2.dontdie.item.ModItemGroup;
 
@@ -38,6 +39,9 @@ public class ModBlocks {
 
     public static final Block ENERGY_CORE = registerBlockWithoutItem("energy_core",
             new EnergyCoreBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(2,2).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
+    public static final Block MYTHRIL_FURNACE = registerBlock("mythril_furnace",
+            new MythrilFurnaceBlock(FabricBlockSettings.of(Material.METAL).requiresTool().strength(2,2).sounds(BlockSoundGroup.METAL).nonOpaque()), ModItemGroup.ITEM_GROUP_EXAMPLE);
 
 
     private static Block registerBlockWithoutItem(String name, Block block) {

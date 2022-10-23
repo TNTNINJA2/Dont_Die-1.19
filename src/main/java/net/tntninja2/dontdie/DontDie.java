@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.tntninja2.dontdie.block.ModBlocks;
 import net.tntninja2.dontdie.block.entity.ModBlockEntities;
 import net.tntninja2.dontdie.item.ModItems;
+import net.tntninja2.dontdie.screen.ModScreenHandlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +22,8 @@ public class DontDie implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModBlockEntities.registerAllBlockEntities();
+
+		ModScreenHandlers.registerAllScreenHandlers();
 
 	}
 }

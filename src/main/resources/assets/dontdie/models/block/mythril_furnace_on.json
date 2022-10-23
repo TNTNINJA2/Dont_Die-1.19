@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "dontdie:block/mythril_furnace_front_on",
+    "side": "dontdie:block/mythril_furnace_side",
+    "top": "dontdie:block/mythril_furnace_top"
+  }
+}

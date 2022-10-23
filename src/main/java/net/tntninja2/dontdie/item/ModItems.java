@@ -67,6 +67,7 @@ public class ModItems {
 
 
     private static Item registerItem(String name, Item item) {
+        DontDie.LOGGER.info("Registering: " + name);
         return Registry.register(Registry.ITEM, new Identifier(DontDie.MOD_ID, name), item);
 
     }
