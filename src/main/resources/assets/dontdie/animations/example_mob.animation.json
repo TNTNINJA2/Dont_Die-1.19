@@ -1,0 +1,44 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.example_mob.walk": {
+			"animation_length": 1.08333,
+			"bones": {
+				"leg_rb": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720)*15", 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anin_time*720)*15", 0]
+					}
+				},
+				"leg_rm": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720)*-15", 0]
+					}
+				},
+				"leg_rf": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720)*15", 0]
+					}
+				},
+				"leg_lb": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720)*15", 0]
+					}
+				},
+				"leg_lm": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720)*-15", 0]
+					}
+				},
+				"leg_lf": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720)*15", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

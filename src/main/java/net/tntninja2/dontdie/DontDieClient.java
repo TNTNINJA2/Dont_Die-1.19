@@ -3,11 +3,14 @@ package net.tntninja2.dontdie;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.tntninja2.dontdie.block.ModBlocks;
 import net.tntninja2.dontdie.block.entity.ModBlockEntities;
 import net.tntninja2.dontdie.block.entity.client.EnergyCoreRenderer;
+import net.tntninja2.dontdie.entity.ModEntities;
+import net.tntninja2.dontdie.entity.client.ExampleMobRenderer;
 import net.tntninja2.dontdie.item.ModItems;
 import net.tntninja2.dontdie.item.client.EnergyCoreItemModel;
 import net.tntninja2.dontdie.item.client.EnergyCoreItemRenderer;
@@ -24,7 +27,7 @@ public class DontDieClient implements ClientModInitializer {
 //        GeoItemRenderer.registerItemRenderer(ModItems.ENERGY_CORE_ITEM, new EnergyCoreItemRenderer());
         BlockEntityRendererRegistry.register(ModBlockEntities.ENERGY_CORE, EnergyCoreRenderer::new);
 
-
+        EntityRendererRegistry.register(ModEntities.ExampleMob, ExampleMobRenderer:: new);
         HandledScreens.register(ModScreenHandlers.MYTHRIL_FURNACE_SCREEN_HANDLER, MythrilFurnaceScreen::new);
     }
 }
