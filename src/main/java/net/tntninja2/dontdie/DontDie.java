@@ -3,9 +3,11 @@ package net.tntninja2.dontdie;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.tntninja2.dontdie.block.ModBlocks;
+import net.tntninja2.dontdie.block.entity.ModBlockEntities;
 import net.tntninja2.dontdie.entity.ModEntities;
 import net.tntninja2.dontdie.entity.custom.ExampleMobEntity;
 import net.tntninja2.dontdie.item.ModItems;
+import net.tntninja2.dontdie.networking.ModMessages;
 import net.tntninja2.dontdie.screen.ModScreenHandlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,6 +31,12 @@ public class DontDie implements ModInitializer {
 
 		GeckoLib.initialize();
 
-		FabricDefaultAttributeRegistry.register(ModEntities.ExampleMob, ExampleMobEntity.setAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.EXAMPLE_MOB, ExampleMobEntity.setAttributes());
+
+
+		ModBlockEntities.registerAllBlockEntities();
+
+		ModMessages.registerC2SPackets();
+		ModMessages.registerS2CPackets();
 	}
 }

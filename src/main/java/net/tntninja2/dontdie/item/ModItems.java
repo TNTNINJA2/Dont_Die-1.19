@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.tntninja2.dontdie.DontDie;
 import net.tntninja2.dontdie.block.ModBlocks;
+import net.tntninja2.dontdie.item.custom.CoreUpgradeItem;
 import net.tntninja2.dontdie.item.custom.EnergyCoreItem;
 import net.tntninja2.dontdie.item.custom.crystal.*;
 
@@ -36,6 +37,18 @@ public class ModItems {
     public static final Item ENERGY_CORE_ITEM = registerItem("energy_core",
             new EnergyCoreItem(ModBlocks.ENERGY_CORE,
                     new FabricItemSettings().group(ModItemGroup.ITEM_GROUP_EXAMPLE)));
+
+    public static final Item ENERGY_CORE_UPGRADE_1 = registerItem("energy_core_upgrade_1",
+            new CoreUpgradeItem(
+                    new FabricItemSettings().group(ModItemGroup.ITEM_GROUP_EXAMPLE), 1));
+
+    public static final Item ENERGY_CORE_UPGRADE_2 = registerItem("energy_core_upgrade_2",
+            new CoreUpgradeItem(
+                    new FabricItemSettings().group(ModItemGroup.ITEM_GROUP_EXAMPLE), 2));
+
+    public static final Item ENERGY_CORE_UPGRADE_3 = registerItem("energy_core_upgrade_3",
+            new CoreUpgradeItem(
+                    new FabricItemSettings().group(ModItemGroup.ITEM_GROUP_EXAMPLE), 3));
 
     public static final Item LARGE_CELERITAS_CRYSTAL = registerItem("large_celeritas_crystal",
             new LargeCaeruleusCrystalItem(new FabricItemSettings().group(ModItemGroup.CRYSTAL_ITEM_GROUP)));

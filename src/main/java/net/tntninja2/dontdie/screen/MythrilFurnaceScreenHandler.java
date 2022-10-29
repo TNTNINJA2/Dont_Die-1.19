@@ -33,6 +33,7 @@ public class MythrilFurnaceScreenHandler extends ScreenHandler {
         addPlayerHotbar(playerInventory);
 
         addProperties(delegate);
+
     }
 
     public boolean isCrafting() {

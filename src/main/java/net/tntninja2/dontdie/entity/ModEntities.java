@@ -12,8 +12,8 @@ import net.tntninja2.dontdie.entity.custom.ExampleMobEntity;
 
 
 public class ModEntities {
-    public static final EntityType<ExampleMobEntity> ExampleMob = Registry.register(
-            Registry.ENTITY_TYPE, new Identifier(DontDie.MOD_ID, "ExampleMob"),
+    public static final EntityType<ExampleMobEntity> EXAMPLE_MOB = Registry.register(
+            Registry.ENTITY_TYPE, new Identifier(DontDie.MOD_ID, "example_mob"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, ExampleMobEntity::new)
                     .dimensions(EntityDimensions.fixed(0.4f, 1.5f)).build());
 }

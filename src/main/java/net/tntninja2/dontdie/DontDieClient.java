@@ -12,8 +12,8 @@ import net.tntninja2.dontdie.block.entity.client.EnergyCoreRenderer;
 import net.tntninja2.dontdie.entity.ModEntities;
 import net.tntninja2.dontdie.entity.client.ExampleMobRenderer;
 import net.tntninja2.dontdie.item.ModItems;
-import net.tntninja2.dontdie.item.client.EnergyCoreItemModel;
 import net.tntninja2.dontdie.item.client.EnergyCoreItemRenderer;
+import net.tntninja2.dontdie.screen.EnergyCoreScreen;
 import net.tntninja2.dontdie.screen.ModScreenHandlers;
 import net.tntninja2.dontdie.screen.MythrilFurnaceScreen;
 import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
@@ -24,10 +24,11 @@ public class DontDieClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EGGPLANT_CROP, RenderLayer.getCutout());
 
 
-//        GeoItemRenderer.registerItemRenderer(ModItems.ENERGY_CORE_ITEM, new EnergyCoreItemRenderer());
+        GeoItemRenderer.registerItemRenderer(ModItems.ENERGY_CORE_ITEM, new EnergyCoreItemRenderer());
         BlockEntityRendererRegistry.register(ModBlockEntities.ENERGY_CORE, EnergyCoreRenderer::new);
 
-        EntityRendererRegistry.register(ModEntities.ExampleMob, ExampleMobRenderer:: new);
+        EntityRendererRegistry.register(ModEntities.EXAMPLE_MOB, ExampleMobRenderer:: new);
         HandledScreens.register(ModScreenHandlers.MYTHRIL_FURNACE_SCREEN_HANDLER, MythrilFurnaceScreen::new);
+        HandledScreens.register(ModScreenHandlers.ENERGY_CORE_SCREEN_HANDLER, EnergyCoreScreen::new);
     }
 }
