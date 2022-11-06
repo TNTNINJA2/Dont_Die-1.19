@@ -27,6 +27,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.WorldChunk;
 import net.tntninja2.dontdie.DontDie;
 import net.tntninja2.dontdie.block.entity.EnergyCoreBlockEntity;
+import net.tntninja2.dontdie.block.entity.ImplementedInventory;
 import net.tntninja2.dontdie.block.entity.MythrilFurnaceBlockEntity;
 import net.tntninja2.dontdie.item.ModItems;
 import net.tntninja2.dontdie.item.custom.CoreUpgradeItem;
@@ -34,26 +35,31 @@ import net.tntninja2.dontdie.networking.ModMessages;
 import org.apache.logging.log4j.core.jmx.Server;
 
 public class EnergyCoreScreenHandler extends ScreenHandler {
-    private final Inventory inventory;
+    private Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
+
+
     public EnergyCoreScreenHandler(int syncId, PlayerInventory inventory) {
-        this(syncId, inventory, new SimpleInventory(3), new ArrayPropertyDelegate(4));
+        this(syncId, inventory, new SimpleInventory(6), new ArrayPropertyDelegate(4));
 
     }
 
     public EnergyCoreScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.ENERGY_CORE_SCREEN_HANDLER, syncId);
         this.inventory = inventory;
+        checkSize(inventory, 6);
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        this.addSlot(new Slot(inventory, 0, 80, 7));
+        this.addSlot(new Slot(inventory, 0, 80, 8));
 
-        for (int i = 1; i < inventory.size(); i++) {
-            this.addSlot(new Slot(inventory, i, -10 + 18 * i, 53));
+
+        for (int i = 0; i < 5; i++) {
+            this.addSlot(new Slot(inventory, i + 1 , 8 + 18 * i, 53));
         }
         DontDie.LOGGER.info("creating a handler with inventory of size: " + inventory.size());
+        DontDie.LOGGER.info("creating a handler with energy core level of: " + this.propertyDelegate.get(3));
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
 
@@ -70,6 +76,8 @@ public class EnergyCoreScreenHandler extends ScreenHandler {
             ItemStack upgradeItemStack = this.inventory.getStack(0);
             CoreUpgradeItem upgradeItem = ((CoreUpgradeItem) upgradeItemStack.getItem());
             if (upgradeItem.TIER == this.propertyDelegate.get(3) + 1) {
+
+
                 DontDie.LOGGER.info("item is correct tier");
 
                 PacketByteBuf buf = PacketByteBufs.create();
@@ -80,8 +88,8 @@ public class EnergyCoreScreenHandler extends ScreenHandler {
                 if (clientWorld != null) {
                     BlockEntity blockEntity = clientWorld.getChunk(blockPos).getBlockEntity(blockPos);
                     if (blockEntity instanceof EnergyCoreBlockEntity energyCoreBlockEntity) {
-                        energyCoreBlockEntity.upgrade();
                         DontDie.LOGGER.info("found core on client");
+                        energyCoreBlockEntity.upgrade();
 
                     }
                 }

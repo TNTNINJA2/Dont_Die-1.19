@@ -193,6 +193,9 @@ public interface ImplementedInventory extends SidedInventory {
         }
     }
 
+
+
+
     /**
      * Clears {@linkplain #getItems() the item list}}.
      */
@@ -210,4 +213,6 @@ public interface ImplementedInventory extends SidedInventory {
     default boolean canPlayerUse(PlayerEntity player) {
         return true;
     }
+
+
 }

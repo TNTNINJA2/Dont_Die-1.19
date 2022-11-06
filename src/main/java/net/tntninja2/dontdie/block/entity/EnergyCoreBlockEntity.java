@@ -40,27 +40,26 @@ import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Mod;
 import java.util.ListIterator;
 
 public class EnergyCoreBlockEntity extends BlockEntity implements IAnimatable, NamedScreenHandlerFactory, ImplementedInventory {
-    private AnimationFactory factory = new AnimationFactory(this);
+    private final AnimationFactory factory = new AnimationFactory(this);
 
     protected final PropertyDelegate propertyDelegate;
     private int upgradeTier;
 
-    private DefaultedList<ItemStack> inventory;
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(6, ItemStack.EMPTY);;
 
     public EnergyCoreBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ENERGY_CORE, pos, state);
-        this.inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
         this.upgradeTier = 0;
 
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
-                switch (index) {
-                    case 0: return EnergyCoreBlockEntity.this.pos.getX();
-                    case 1: return EnergyCoreBlockEntity.this.pos.getY();
-                    case 2: return EnergyCoreBlockEntity.this.pos.getZ();
-                    case 3: return EnergyCoreBlockEntity.this.upgradeTier;
-                    default: return 0;
-                }
+                return switch (index) {
+                    case 0 -> EnergyCoreBlockEntity.this.pos.getX();
+                    case 1 -> EnergyCoreBlockEntity.this.pos.getY();
+                    case 2 -> EnergyCoreBlockEntity.this.pos.getZ();
+                    case 3 -> EnergyCoreBlockEntity.this.upgradeTier;
+                    default -> 0;
+                };
             }
 
             public void set(int index, int value) {
@@ -145,12 +144,6 @@ public class EnergyCoreBlockEntity extends BlockEntity implements IAnimatable, N
         this.upgradeTier++;
         this.inventory.set(0, ItemStack.EMPTY);
         DontDie.LOGGER.info("upgrading on client? " + this.getWorld().isClient());
-        DefaultedList<ItemStack> newInventory = DefaultedList.ofSize(inventory.size() + 1, ItemStack.EMPTY);
-        for (int i = 0; i < inventory.size(); i++) {
-            ItemStack itemStack = inventory.get(i);
-            newInventory.set(i, itemStack);
-        }
-        inventory = newInventory;
-        this.markDirty();
+
     }
 }

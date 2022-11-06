@@ -1,9 +1,11 @@
 package net.tntninja2.dontdie.networking;
 
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.util.Identifier;
 import net.tntninja2.dontdie.DontDie;
 import net.tntninja2.dontdie.networking.packet.EnergyCoreUpgradeC2SPacket;
+import net.tntninja2.dontdie.networking.packet.EnergyCoreUpgradeS2CPacket;
 
 public class ModMessages {
     public static final Identifier ENERGY_CORE_UPGRADE_ID = new Identifier(DontDie.MOD_ID, "energy_core_upgrade");
@@ -17,6 +19,7 @@ public class ModMessages {
     public static void registerS2CPackets() {
 
 //        ClientPlayNetworking.registerGlobalReceiver(CORE_UPGRADE_ID, SlateCannonLaserS2CPacket::receive);
+        ClientPlayNetworking.registerGlobalReceiver(ENERGY_CORE_UPGRADE_ID, EnergyCoreUpgradeS2CPacket::receive);
 
 
 
