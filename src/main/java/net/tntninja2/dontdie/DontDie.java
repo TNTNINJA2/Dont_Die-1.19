@@ -1,7 +1,12 @@
 package net.tntninja2.dontdie;
 
+import com.mojang.datafixers.types.templates.Tag;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.minecraft.data.server.PointOfInterestTypeTagProvider;
+import net.minecraft.tag.TagBuilder;
+import net.minecraft.tag.TagGroupLoader;
+import net.minecraft.tag.TagManagerLoader;
 import net.tntninja2.dontdie.block.ModBlocks;
 import net.tntninja2.dontdie.block.entity.ModBlockEntities;
 import net.tntninja2.dontdie.entity.ModEntities;
@@ -38,5 +43,6 @@ public class DontDie implements ModInitializer {
 
 		ModMessages.registerC2SPackets();
 		ModMessages.registerS2CPackets();
+
 	}
 }

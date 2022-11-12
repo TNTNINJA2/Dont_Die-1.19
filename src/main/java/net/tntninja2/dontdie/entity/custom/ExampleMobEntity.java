@@ -14,6 +14,8 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.tntninja2.dontdie.block.ModBlocks;
+import net.tntninja2.dontdie.entity.goal.AttackEnergyCoreGoal;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -22,7 +24,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class ExampleMobEntity extends HostileEntity implements IAnimatable {
+public class ExampleMobEntity extends DestructiveEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
 
 
@@ -39,6 +41,7 @@ public class ExampleMobEntity extends HostileEntity implements IAnimatable {
     }
     @Override
     protected void initGoals() {
+        this.goalSelector.add(0, new StepAndDestroyBlockGoal(ModBlocks.ENERGY_CORE, this, 1, 20));
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, new MeleeAttackGoal(this, 1.2D, false));
         this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.75f, 1));
@@ -50,11 +53,10 @@ public class ExampleMobEntity extends HostileEntity implements IAnimatable {
     }
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chomper.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.example_mob.walk", true));
             return PlayState.CONTINUE;
         }
 
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.chomper.idle", true));
         return PlayState.CONTINUE;
     }
     @Override
